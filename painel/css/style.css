@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #ccc;
+}
+
 .form-login {
   background-color: #ccc;
   display: flex;
@@ -82,6 +86,7 @@
 
 .sidebar {
   background-color: #fff;
+  height: 100vh;
 }
 
 .sidebar a {
@@ -97,4 +102,48 @@
   background-color: #666;
   color: #fff;
   padding: 10px 40px;
+}
+
+form#cadastro-cliente {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+form#cadastro-cliente label {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #141414;
+}
+
+form#cadastro-cliente input {
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  height: 60px;
+  font-size: 24px;
+  padding-left: 8px;
+  color: #141414;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form#cadastro-cliente select {
+  height: 60px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #141414;
+  font-size: 24px;
+  padding-left: 8px;
+  outline: none;
+}
+
+form#cadastro-cliente input[type="submit"] {
+  background-color: #141414;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
 }
