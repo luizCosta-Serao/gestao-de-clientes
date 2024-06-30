@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-login {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 40px;
+  margin: 25vh auto;
+  border-radius: 10px;
+}
+
+.form-login label {
+  color: #141414;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+
+.form-login input {
+  border: 1px solid  transparent;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: #141414;
+  outline: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+  transition: .3s;
+}
+
+.form-login input[type="text"]:hover,
+.form-login input[type="text"]:focus,
+.form-login input[type="password"]:hover
+.form-login input[type="password"]:focus {
+  border: 1px solid #141414;
+}
+
+.form-login input[type="submit"] {
+  background-color: #141414;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.box-erro {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.header {
+  background-color: #444;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.container {
+  display: grid;
+  background-color: #ccc;
+  gap: 40px;
+  grid-template-columns: 300px auto;
+}
+
+.sidebar {
+  background-color: #fff;
+}
+
+.sidebar a {
+  padding: 15px 40px;
+  display: block;
+  text-decoration: none;
+  color: #141414;
+  font-size: 18px;
+  
+}
+
+.sidebar h2 {
+  background-color: #666;
+  color: #fff;
+  padding: 10px 40px;
+}
