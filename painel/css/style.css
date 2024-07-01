@@ -190,3 +190,59 @@ form#cadastro-cliente input[type="submit"] {
   margin-top: 10px;
   display: inline-block;
 }
+
+
+form#editar-cliente {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+form#editar-cliente label {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #141414;
+}
+
+form#editar-cliente input {
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  height: 60px;
+  font-size: 24px;
+  padding-left: 8px;
+  color: #141414;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form#editar-cliente select {
+  height: 60px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #141414;
+  font-size: 24px;
+  padding-left: 8px;
+  outline: none;
+}
+
+form#editar-cliente input[type="submit"] {
+  background-color: #141414;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-editar {
+  background-color: yellow;
+  color: #141414;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}

@@ -1,3 +1,4 @@
+// Cadastro de cliente
 $('#cadastro-cliente').submit(function(e) {
   e.preventDefault();
   let name = $('#name').val();
@@ -24,6 +25,7 @@ $('#cadastro-cliente').submit(function(e) {
   });
 })
 
+// função para exibir todos os clientes
 function getClients() {
   $.ajax({
     url: 'http://localhost/gestao-clientes/painel/form/exibir-clientes.php',
@@ -44,15 +46,19 @@ function getClients() {
             <p>Tipo: ${data[i].tipo}</p>
             <p>CPF/CNPJ: ${data[i].cpf_cnpj}</p>
             <a class="btn-delete" href="${location.href}?id=${data[i].id}">Deletar</a>
+            <a class="btn-editar" href="${location.href.replace('listar-clientes', 'editar-cliente')}?id=${data[i].id}">Editar</a>
           </div>
         `)
       }
   });
 }
 
+// Se estiver na página listar-clientes
 if(location.href.includes('listar-clientes')) {
+  // Mostrar todos os clientes
   getClients();
   const id = location.search.split('=')[1]
+  // Deletar cliente
   if (id) {
     $.ajax({
       url: 'http://localhost/gestao-clientes/painel/form/deletar-cliente.php',
@@ -63,4 +69,52 @@ if(location.href.includes('listar-clientes')) {
     })
     location.href = 'http://localhost/gestao-clientes/painel/listar-clientes'
   }
+}
+
+// Se estiver na página editar-cliente
+if (location.href.includes('editar-cliente')) {
+  const id = location.search.split('=')[1]
+  // puxar valores do cliente que será editado através do id
+  $.ajax({
+    url: 'http://localhost/gestao-clientes/painel/form/atualizar-cliente.php',
+    method: 'GET',
+    data: {
+      id,
+    },
+    dataType: 'json',
+  }).done(function(data) {
+    $('#name').val(data.nome);
+    $('#email').val(data.email);
+    $('#type').val(data.tipo);
+    $('#cpf-cnpj').val(data.cpf_cnpj);
+    console.log(data);
+  });
+
+  // Atualizar dados do cliente
+  $('#editar-cliente').submit(function(e) {
+    e.preventDefault();
+    let name = $('#name').val();
+    let email = $('#email').val();
+    let type = $('#type').val();
+    let cpf_cnpj = $('#cpf-cnpj').val();
+  
+    $.ajax({
+      url: 'http://localhost/gestao-clientes/painel/form/atualizar-cliente.php',
+      method: 'POST',
+      data: {
+        name,
+        email,
+        type,
+        cpf_cnpj,
+        id,
+      },
+      dataType: 'json'
+    }).done(function(data) {
+      $('#name').val(data.nome);
+      $('#email').val(data.email);
+      $('#type').val(data.tipo);
+      $('#cpf-cnpj').val(data.cpf_cnpj);
+      console.log(data);
+    });
+  })
 }
