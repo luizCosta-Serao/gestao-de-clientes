@@ -64,6 +64,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  position: fixed;
+  height: 60px;
+  width: 100%;
 }
 
 .header p {
@@ -78,15 +81,14 @@ body {
 }
 
 .container {
-  display: grid;
   background-color: #ccc;
-  gap: 40px;
-  grid-template-columns: 300px auto;
 }
 
 .sidebar {
   background-color: #fff;
   height: 100vh;
+  position: fixed;
+  top: 60px;
 }
 
 .sidebar a {
@@ -102,6 +104,12 @@ body {
   background-color: #666;
   color: #fff;
   padding: 10px 40px;
+}
+
+.content {
+  width: calc(100% - 300px);
+  padding-left: 300px;
+  padding-top: 60px;
 }
 
 form#cadastro-cliente {
@@ -146,4 +154,28 @@ form#cadastro-cliente input[type="submit"] {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.box-client {
+  display: grid;
+  grid-template-columns: 1fr ;
+  gap: 40px 20px;
+  padding: 40px;
+}
+
+.box-single-client {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.box-single-client h2 {
+  color: #141414;
+  margin-bottom: 10px;
+}
+
+.box-single-client p {
+  color: #444;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
