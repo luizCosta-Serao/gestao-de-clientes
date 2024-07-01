@@ -24,6 +24,7 @@
         <a href="<?php echo INCLUDE_PATH_PAINEL; ?>">Início</a>
         <h2>Gestao de Clientes</h2>
         <a href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastrar-cliente">Cadastrar Cliente</a>
+        <a href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-clientes">Listar Clientes</a>
     </aside>
     <div class="content">
       <?php
