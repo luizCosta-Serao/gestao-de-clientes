@@ -55,9 +55,52 @@ function getClients() {
 
 // Se estiver na página listar-clientes
 if(location.href.includes('listar-clientes')) {
+  let busca = $('#busca').val()
   // Mostrar todos os clientes
-  getClients();
+  if (busca === '') {
+    getClients();
+  } else {
+   
+  }
   const id = location.search.split('=')[1]
+
+  
+   // Filtrar clientes
+   $('.busca-clientes form').submit(function(e) {
+    e.preventDefault()
+    const busca = $('#busca').val();
+
+    $.ajax({
+      url: 'http://localhost/gestao-clientes/painel/form/filtrar-clientes.php',
+      method: 'GET',
+      data: {
+        busca,
+      },
+      contentType: "application/json; charset=utf-8",
+      dataType: 'json',
+    }).done(function(data) {
+      console.log(data)
+      if (typeof data === 'string') {
+        return $('.box-client').prepend(`
+          <p class="erro">Não existem clientes cadastrados com os valores passados</p>
+        `);
+      }
+      $('.box-client').empty();
+        for (let i = 0; i < data.length; i++) {
+          $('.box-client').prepend(`
+            <div class="box-single-client">
+              <h2>Nome: ${data[i].nome}</h2>
+              <p>Email: ${data[i].email}</p>
+              <p>Tipo: ${data[i].tipo}</p>
+              <p>CPF/CNPJ: ${data[i].cpf_cnpj}</p>
+              <a class="btn-delete" href="${location.href}?id=${data[i].id}">Deletar</a>
+              <a class="btn-editar" href="${location.href.replace('listar-clientes', 'editar-cliente')}?id=${data[i].id}">Editar</a>
+            </div>
+          `)
+        }
+    });
+  }) 
+
   // Deletar cliente
   if (id) {
     $.ajax({
@@ -69,6 +112,7 @@ if(location.href.includes('listar-clientes')) {
     })
     location.href = 'http://localhost/gestao-clientes/painel/listar-clientes'
   }
+
 }
 
 // Se estiver na página editar-cliente
@@ -117,4 +161,5 @@ if (location.href.includes('editar-cliente')) {
       console.log(data);
     });
   })
+
 }
