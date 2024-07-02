@@ -246,3 +246,40 @@ form#editar-cliente input[type="submit"] {
   font-size: 20px;
   font-weight: 700;
 }
+
+.busca-clientes {
+  background-color: #fff;
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.busca-clientes h4 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.busca-clientes input[type="text"] {
+  border: 1px solid #141414;
+  height: 40px;
+  font-size: 24px;
+  border-radius: 10px;
+  color: #444;
+  display: block;
+  padding-left: 8px;
+}
+
+.busca-clientes input[type="submit"] {
+  background-color: #141414;
+  color: #fff;
+  padding: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
