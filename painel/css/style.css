@@ -330,3 +330,25 @@ form#editar-cliente input[type="submit"] {
   position: relative;
   height: 60px;
 }
+
+.lista-pagamentos-pendentes {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.lista-pagamentos-pendentes div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+}
+
+.lista-pagamentos-pendentes div p {
+  font-size: 20px;
+  color: #141414;
+  margin-bottom: 10px;
+}
+
+.lista-pagamentos-pendentes .titulos-tabela {
+  margin-bottom: 40px;
+}
