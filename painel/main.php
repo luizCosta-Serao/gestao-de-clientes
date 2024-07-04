@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- plugin calendário -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/default/zebra_datepicker.min.css">
   <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>/css/style.css">
   <title>Painel de Controle</title>
 </head>
@@ -38,6 +40,13 @@
     </div>
   </section>
   <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.js"></script>
+  <!-- plugin calendário -->
+  <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/zebra_datepicker.min.js"></script>
+  <!-- plugin maskMoney -->
+  <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/plugins/jquery.maskMoney.js"></script>
+  <!-- Plugin mask -->
+  <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/plugins/jquery.mask.js"></script>
   <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/index.js"></script>
+  <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/financeiro.js"></script>
 </body>
 </html>

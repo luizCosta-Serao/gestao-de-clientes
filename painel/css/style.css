@@ -283,3 +283,50 @@ form#editar-cliente input[type="submit"] {
   display: block;
   margin-top: 10px;
 }
+
+.title {
+  font-size: 32px;
+  color: #141414;
+  margin-bottom: 20px;
+  font-weight: 400;
+  text-align: center;
+  border-top: 1px solid #141414;
+  padding-top: 20px;
+}
+
+#adicionar-pagamento {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+#adicionar-pagamento label {
+  display: block;
+  font-size: 24px;
+  color: #141414;
+  margin-bottom: 5px;
+}
+
+#adicionar-pagamento input {
+  border: 1px solid transparent;
+  height: 40px;
+  width: 100%;
+  font-size: 24px;
+  color: #141414;
+  margin-bottom: 15px;
+  display: block;
+  padding: 0 8px;
+}
+
+#adicionar-pagamento input[type="submit"] {
+  background-color: #141414;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 24px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: block;
+  font-weight: 700;
+  position: relative;
+  height: 60px;
+}
