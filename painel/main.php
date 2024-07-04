@@ -27,6 +27,7 @@
         <h2>Gestao de Clientes</h2>
         <a href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastrar-cliente">Cadastrar Cliente</a>
         <a href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-clientes">Listar Clientes</a>
+        <a href="<?php echo INCLUDE_PATH_PAINEL; ?>visualizar-pagamentos">Visualizar Pagamentos</a>
     </aside>
     <div class="content">
       <?php
