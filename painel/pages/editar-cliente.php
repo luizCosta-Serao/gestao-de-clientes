@@ -36,7 +36,7 @@
       // Formatando data para verificar se data é negativa
       $dateVencimento = explode('/', $vencimento);
       $dateVencimento = $dateVencimento[2].'-'.$dateVencimento[1].'-'.$dateVencimento[0];
-      if (strtotime($dateVencimento) < time()) {
+      if (strtotime($dateVencimento) < strtotime(date('Y-m-d'))) {
         // se data for negativa, exibir mensagem de erro
         echo '<p class="erro">Você selecionou uma data negativa</p>';
       } else {
@@ -56,6 +56,11 @@
       }
     }
 
+    if (isset($_GET['pago'])) {
+      $sql = MySql::connect()->prepare("UPDATE `financeiro` SET status = 1 WHERE id = ?");
+      $sql->execute(array($_GET['pago']));
+      echo '<p class="sucesso">O pagamento foi quitado com sucesso</p>';
+    }
   ?>
 
   <label for="nome_pagamento">Nome do Pagamento</label>
@@ -72,3 +77,42 @@
 
   <input type="submit" name="btn_add_pagamento" id="btn_add_pagamento" value="Adicionar Pagamento">
 </form>
+
+<section class="pagamentos-pendentes">
+    <h1 class="title">Pagamentos pendentes</h1>
+    <div class="lista-pagamentos-pendentes">
+      <div class="titulos-tabela">
+        <p>Nome do pagamento</p>
+        <p>Cliente</p>
+        <p>Valor</p>
+        <p>Vencimento</p>
+        <p>Enviar Email</p>
+        <p>Marcar como Pago</p>
+      </div>
+      <div class="valores-tabela">
+        <?php
+          $pagamentosPendentes = MySql::connect()->prepare("SELECT * FROM `financeiro` WHERE status = ? AND cliente_id = ? ORDER BY vencimento ASC");
+          $pagamentosPendentes->execute(array(0, $id));
+          $pagamentosPendentes = $pagamentosPendentes->fetchAll();
+          foreach ($pagamentosPendentes as $key => $value) {
+        ?>
+          <p><?php echo $value['nome'] ?></p>
+          <?php
+            $cliente = MySql::connect()->prepare("SELECT * FROM `clientes` WHERE id = ?");
+            $cliente->execute(array($value['cliente_id']));
+            $cliente = $cliente->fetch();
+            
+            $style = '';
+            if (strtotime(date('Y-m-d')) >= strtotime($value['vencimento'])) {
+              $style = 'style="background-color: red"';
+            }
+          ?>
+          <p><?php echo $cliente['nome'] ?></p>
+          <p><?php echo $value['valor'] ?></p>
+          <p <?php echo $style; ?>><?php echo date('d/m/Y',strtotime($value['vencimento'])) ?></p>
+          <a href="">Enviar Email</a>
+          <a class="pagamento-realizado" href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-cliente?id=<?php echo $id ?>&pago=<?php echo $value['id']; ?>">Pago</a>
+        <?php } ?>
+      </div>
+    </div>
+</section>
