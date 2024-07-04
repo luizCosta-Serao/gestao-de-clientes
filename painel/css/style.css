@@ -331,10 +331,12 @@ form#editar-cliente input[type="submit"] {
   height: 60px;
 }
 
-.lista-pagamentos-pendentes {
+.lista-pagamentos-pendentes,
+.lista-pagamentos-concluidos {
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
+  margin-bottom: 80px;
 }
 
 .lista-pagamentos-pendentes div {
@@ -343,12 +345,19 @@ form#editar-cliente input[type="submit"] {
   justify-content: space-between;
 }
 
-.lista-pagamentos-pendentes div p {
+.lista-pagamentos-concluidos div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.lista-pagamentos-pendentes div p,
+.lista-pagamentos-concluidos div p {
   font-size: 20px;
   color: #141414;
   margin-bottom: 10px;
 }
 
-.lista-pagamentos-pendentes .titulos-tabela {
+.lista-pagamentos-pendentes .titulos-tabela,
+.lista-pagamentos-concluidos .titulos-tabela {
   margin-bottom: 40px;
 }
