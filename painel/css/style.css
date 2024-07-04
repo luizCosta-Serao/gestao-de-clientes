@@ -361,3 +361,15 @@ form#editar-cliente input[type="submit"] {
 .lista-pagamentos-concluidos .titulos-tabela {
   margin-bottom: 40px;
 }
+
+.gerar-pdf a {
+  display: block;
+  background-color: #141414;
+  color: #fff;
+  margin: 10px 0;
+  font-weight: 700;
+  text-decoration: none;
+  max-width: 150px;
+  text-align: center;
+  padding: 10px 20px;
+}

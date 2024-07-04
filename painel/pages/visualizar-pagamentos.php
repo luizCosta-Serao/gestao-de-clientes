@@ -8,6 +8,10 @@
 ?>
 <section class="pagamentos-pendentes">
     <h1 class="title">Pagamentos pendentes</h1>
+    <div class="gerar-pdf">
+      <a target="__blank" href="<?php echo INCLUDE_PATH_PAINEL; ?>gerar-pdf.php?pagamento=pendentes">Gerar PDF</a>
+    </div>
+
     <div class="lista-pagamentos-pendentes">
       <div class="titulos-tabela">
         <p>Nome do pagamento</p>
@@ -51,6 +55,9 @@
 
 <section class="pagamentos-concluidos">
     <h1 class="title">Pagamentos Concluídos</h1>
+    <div class="gerar-pdf">
+      <a target="__blank" href="<?php echo INCLUDE_PATH_PAINEL; ?>gerar-pdf.php?pagamento=concluidos">Gerar PDF</a>
+    </div>
     <div class="lista-pagamentos-concluidos">
       <div class="titulos-tabela">
         <p>Nome do pagamento</p>
