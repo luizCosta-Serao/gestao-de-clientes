@@ -7,6 +7,7 @@
   $id = $_GET['id'];
   echo $id;
   $sql = MySql::connect()->prepare("DELETE FROM `clientes` WHERE id = ?");
+  MySql::conecct()->prepare("DELETE FROM `financeiro` WHERE cliente_id = $id");
   $sql->execute(array($id));
   if ($sql->rowCount() >= 1) {
     echo json_encode($id);
